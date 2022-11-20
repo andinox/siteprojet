@@ -3,6 +3,7 @@ body{
 }
 
 header {
+    background-color: white;
     position: fixed;
     width: 100%;
     height: 8%;
@@ -13,9 +14,15 @@ header {
     gap: 0px 0px; 
     grid-template-areas: 
       "logo recherche connexion"
-      ". . liste_menu"; 
+      ". . liste_menu";
 
 }
+
+
+header {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 27px -5px, rgba(0, 0, 0, 0.3) 0px 2px 16px -8px;
+}
+
 
 .border-button {
     border-bottom: 0.5px solid rgba(137, 135, 135, 0.50);
@@ -191,8 +198,8 @@ header {
     grid-area: liste_menu;
 }
 
-.liste_menu div {
-    opacity: 50%;
+.liste_menu div {    
+    background-color: white;
     height: 100%;
     cursor: pointer;
     width: 100%;
@@ -203,15 +210,20 @@ header {
     flex-wrap: nowrap;
 }
 
+.liste_menu div:first-child {
+    opacity: 1;
+}
+
 .liste_menu div :nth-child(1) {
-    flex: 0 0 25%;
+    flex: 0 0 27.5%;
     height: 60%;
     margin-right: 5%;
-    border-right: 1px solid black;
+    opacity: 50%;
+    border-right: 1px solid rgba(0, 0, 0);
 }
 
 .liste_menu div :nth-child(2) {
-    flex: 0 0 75%;
+    flex: 0 0 72%;
 }
 
 .liste_menu div:nth-child(3) img {
@@ -219,6 +231,7 @@ header {
 }
 
 .liste_menu div h1 {
+    color: rgba(0, 0, 0, 0.5);
     font-family: Inter;
 }
 
@@ -234,19 +247,125 @@ header {
     transform: translateX(200%);
 }
 
-.liste_menu div:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+.liste_menu div:not(:last-child):hover {
+    background-color: rgb(220, 219, 219);
 }
 
-.liste_menu div:nth-child(3):hover {
-    background-color: rgba(255, 0, 0, 0.2);
+.liste_menu div:nth-child(3):hover h1 {
+    color: rgb(255, 82, 82);
+    font-weight: bolder;
+
 }
-
-
-
-
 
 .liste_menu div {
-    border-bottom: 0.5px solid rgba(137, 135, 135);
-    border-left: 0.5px solid rgba(137, 135, 135);
+    border-bottom: 0.5px solid rgba(137, 135, 135,0.5);
+    border-left: 0.5px solid rgba(137, 135, 135,0.5);
+}
+
+
+
+/*menu déroulan*/
+
+.layer {
+    z-index: -1;
+    top: 8%;
+    width: 100%;
+    height: 30%;
+    position: absolute;
+
+    display: flex;
+    flex-wrap: nowrap;
+    transition: all 0.5s ease-out;
+}
+
+.layer .slide {
+    width: 100%;
+    height: 100%;
+}
+
+.layer :not(.slided) {
+    animation: slid .5s ease-out forwards;   
+}
+
+
+.layer .slide {
+    flex:  0 0 100%;
+    display: flex;
+}
+
+.slided {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.img_livre {
+    width: 200%;
+    position: relative;
+    grid-area: img_livre;
+}
+
+
+.slide_contnent .zone_info {
+    grid-area: zone_info;
+    height: 35%;
+}
+
+
+@keyframes slid {
+    from {
+        flex:  0 0 100%;  
+    }
+    to {
+        flex: 0 0 0%;
+    }
+}
+
+.layer .img_ {
+    opacity: 50%;
+    cursor: pointer;
+    position: absolute;
+    height: 20%;
+}
+
+.layer .img_:hover {
+    opacity: 1;
+}
+
+.layer > :first-child {
+    top: 50%;
+    left: 0.5%;
+    transform: translate(-0.5%,-50%);
+}
+
+.layer > :last-child {
+    top: 50%;
+    right: 0.5%;
+    transform: translate(-0.5%,-50%);
+}
+
+.layer .one {
+    background-color: #ff009d;
+}
+
+.layer .two {
+    background-color: #ff0000;
+}
+
+.layer .three {
+    background-color: #373273;
+}
+.layer .four {
+    background-color: #458b45;
+}
+.layer .five {
+    background-color: #620000;
+}
+
+.none {
+   display: none;
 }
