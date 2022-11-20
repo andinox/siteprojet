@@ -157,6 +157,7 @@ header {
 .connexion h1 {
     font-family: Inter;
     font-size: larger;
+    padding-left: 20%;
 }
 
 .connexion h1::first-line {
@@ -270,7 +271,7 @@ header {
     z-index: -1;
     top: 8%;
     width: 100%;
-    height: 30%;
+    height: 35%;
     position: absolute;
 
     display: flex;
@@ -279,51 +280,105 @@ header {
 }
 
 .layer .slide {
+    overflow: hidden;
     width: 100%;
     height: 100%;
 }
 
-.layer :not(.slided) {
-    animation: slid .5s ease-out forwards;   
+.layer > :not(.slided) {
+    flex: 0 0 0%;
 }
 
+.slide:not(.slided) div {
+    display: none;
+}
 
-.layer .slide {
+.layer > .slided {
     flex:  0 0 100%;
     display: flex;
 }
 
+
 .slided {
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.slided > div:not(.blur){
+    z-index: 1;
+    position: absolute;
+    
 
+    max-width: 50%;
+    height: 80%;
 
+    display:grid;
+    grid-template-columns:40% 30% 30% ;
+    grid-template-rows:15% 70% 15%;
+    grid-column-gap:0px;
+    grid-row-gap:0px;
 
+    font-family: Inter;
+}
 
-.img_livre {
-    width: 200%;
-    position: relative;
-    grid-area: img_livre;
+.blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(97, 1, 59,0.2);
+
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+}
+
+.img_livre{
+    padding-right: 20%;
+    grid-area:1 / 1 / 4 / 2;    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.img_livre img {
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.title{
+    text-decoration:underline;
+    text-align: center;
+    grid-area:1 / 2 / 2 / 4; 
+}
+.descrip{
+    text-align: center;
+    grid-area:2 / 2 / 3 / 4; 
+}
+.author{
+    grid-area:3 / 2 / 4 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-content: center;
+}
+.button{
+    grid-area:3 / 3 / 4 / 4;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: #d0d0d0;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 
-.slide_contnent .zone_info {
-    grid-area: zone_info;
-    height: 35%;
-}
 
-
-@keyframes slid {
-    from {
-        flex:  0 0 100%;  
-    }
-    to {
-        flex: 0 0 0%;
-    }
-}
 
 .layer .img_ {
     opacity: 50%;
@@ -337,6 +392,7 @@ header {
 }
 
 .layer > :first-child {
+    z-index: 1;
     top: 50%;
     left: 0.5%;
     transform: translate(-0.5%,-50%);
@@ -349,15 +405,25 @@ header {
 }
 
 .layer .one {
-    background-color: #ff009d;
+    background-image: url(./img/basededonée.jpeg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .layer .two {
-    background-color: #ff0000;
+    background-image: url(./img/basededonée.jpeg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .layer .three {
-    background-color: #373273;
+    background-image: url(./img/reseaux.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 .layer .four {
     background-color: #458b45;
