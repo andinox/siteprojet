@@ -328,10 +328,10 @@ header {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgb(97, 1, 59,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
 }
 
 .img_livre{
@@ -405,31 +405,37 @@ header {
 }
 
 .layer .one {
-    background-image: url(./img/basededonée.jpeg);
-    background-position: top;
+    background-image: url(./img/python.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .layer .two {
     background-image: url(./img/basededonée.jpeg);
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .layer .three {
     background-image: url(./img/reseaux.jpg);
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
 }
 .layer .four {
-    background-color: #458b45;
+    background-image: url(./img/humour.jpg);
+    background-position: end;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .layer .five {
-    background-color: #620000;
+    background-image: url(./img/prince.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .none {
