@@ -568,6 +568,7 @@ header {
 .event_date {
     text-align: center;
     padding-left: 2%;
+    padding-right: 2%;
     font-family: Inder;
     word-break: break-word;
     max-width: 10%;
