@@ -569,8 +569,8 @@ header {
     text-align: center;
     padding-left: 2%;
     font-family: Inder;
-    word-break :keep-all;
-    width: 10%;
+    word-break: break-word;
+    max-width: 10%;
     border-right: 1px solid;
 }
 
