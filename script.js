@@ -66,3 +66,15 @@ arrowr.addEventListener("click", function() {
 })
 
 
+
+window.onload = () => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const connected = urlParams.get('connected')
+    if (connected == null) {
+        location.href = "?connected=false"
+    } else if (connected == 'true') {
+        document.getElementsByClassName("connexion")[0].classList.remove("child_none");
+    }
+}
+

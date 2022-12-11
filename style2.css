@@ -1,0 +1,232 @@
+
+
+
+/*menu déroulan*/
+
+
+
+.img_livre{
+    padding-right: 20%;
+    grid-area:1 / 1 / 4 / 2;    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.img_livre img {
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.title{
+    text-decoration:underline;
+    text-align: center;
+    grid-area:1 / 2 / 2 / 4; 
+}
+.descrip{
+    text-align: center;
+    grid-area:2 / 2 / 3 / 4; 
+}
+.author{
+    grid-area:3 / 2 / 4 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+
+.button{
+    grid-area:3 / 3 / 4 / 4;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: #d0d0d0;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.button h4 {
+    font-family: Inder;
+    z-index: 8;
+}
+
+
+.button::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 0%;
+    background-color: white;
+    width: 0%;
+    height: 100%;
+    transition: 400ms ease-in-out;
+}
+
+.button:hover::after {
+    content: "";
+    width: 100%;
+}
+
+
+
+
+.aj_ev {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 45%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.ajouter {
+    position: relative;
+    flex: 0 0 60%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.news .box_title {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    box-shadow: 0px 20px 20px -10px rgba(0, 0, 0, 0.1);
+    background: white;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.news img {
+    width: 7%;
+}
+
+.news h4 {
+    font-size: large;
+    padding-left: 1%;
+    font-family: Inder;
+}
+
+
+.ajouter .box_title {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    box-shadow: 0px 20px 30px -15px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+
+.ajouter h4 {
+    font-family: Inder;
+    padding-left: 3%;
+}
+
+.news {
+    position: relative;
+    flex: 0 0 35%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.1) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+}
+
+
+.events {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    height: 80%;
+    width: 90%;
+}
+
+.event_content {
+    cursor: pointer;
+    display: flex;
+    height: 20%;
+    width: 98%;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    margin: 1%;
+}
+
+.event_content:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.event_date {
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: Inder;
+    word-break: break-word;
+    max-width: 10%;
+    border-right: 1px solid;
+}
+
+.event_value {
+    padding-left: 5%;
+    font-family: Inder;
+}
+
+
+
+.v2 {
+    display: none;
+}
+
+.footer-bg-color {
+    display : flex;
+    position: absolute;
+    top : 100%;
+    background-color: #61013B;
+    width : 100%;
+    height : 20%;
+}
+
+.footer-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.footer-image img{
+    height : 60%;
+    filter : drop-shadow(0 0 5px #000);
+}
+
+.footer-information{
+    display : flex;
+    justify-content: space-evenly;
+    align-items : center;
+    width: 70%;
+}
+
+.footer-information p::first-line{
+    font-weight: bolder;
+    font-size : 32px;
+}
+
+.footer-information p{
+    color : white;
+}
+
