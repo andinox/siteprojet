@@ -3,30 +3,129 @@ body{
 }
 
 header {
+    z-index: 2;
     background-color: white;
     position: fixed;
     width: 100%;
     height: 8%;
-
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 27px -5px, rgba(0, 0, 0, 0.3) 0px 2px 16px -8px;
     display: grid; 
-    grid-template-columns: 20% 65% 15%; 
+    grid-template-columns: 20% 55% 5% 5% 15%; 
     grid-template-rows: 100% 100%; 
     gap: 0px 0px; 
     grid-template-areas: 
-      "logo recherche connexion"
-      ". . liste_menu";
+      "logo recherche livre_list lang connexion"
+      ". . . . liste_menu";
 
 }
 
 
-header {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 0px 27px -5px, rgba(0, 0, 0, 0.3) 0px 2px 16px -8px;
-}
+
+
+
 
 
 .border-button {
     border-bottom: 0.5px solid rgba(137, 135, 135, 0.50);
 }
+
+.lang, .livre_list {
+    background-color: white;
+    border-left: 0.5px solid rgba(137, 135, 135, 0.50);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
+.lang img, .livre_list img {
+    opacity: 50%;
+    height: 70%;
+}
+
+.lang:hover img, .livre_list:hover img {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+.lang:not(:hover) section {
+    top: -150%;
+}
+
+.livre_list:not(:hover) section {
+    top: -400%;
+}
+
+.lang section, .livre_list section {
+    z-index: -2;
+    position: absolute;
+    top: 100%;
+    width: 10%;
+    height: 250%;
+    transition: 150ms;
+}
+
+.cone {
+    position: absolute;
+    height: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15%;
+    background-color: white;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.list_pup {
+    display: flex;
+    flex-direction: column;
+}
+
+.livre_list .list_pup{
+    overflow-y: scroll;
+}
+
+.list_pup p {
+    font-family: Inter;
+    text-align: center;
+    word-break:keep-all;
+}
+
+.livre_list .list_pup p {
+    margin: 5%;
+}
+
+.lang .list_pup p:first-child {
+    text-decoration: underline;
+}
+
+.list_pup div {
+    cursor: pointer;
+    margin: 5%;
+    padding-bottom: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.lang .list_pup div:not(:first-child):hover,
+.livre_list .list_pup div:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.list_pup {
+    position: relative;
+    top: 10%;
+    height: 90%;
+    border-radius: 5px;
+    background-color: white;
+}
+
 
 .logo {
     display: grid; 
@@ -56,6 +155,7 @@ header {
 
 
 .recherche {
+    background-color: white;
     border-left: 0.5px solid rgba(137, 135, 135, 0.50);
     grid-area: recherche; 
 
@@ -132,6 +232,7 @@ header {
 }
 
 .connexion {
+    background-color: white;
     position: relative;
     grid-area: connexion;
     border-left: 0.5px solid rgba(137, 135, 135, 0.50);
@@ -274,38 +375,22 @@ header {
     width: 100%;
     height: 35%;
     position: absolute;
-
-    display: flex;
-    flex-wrap: nowrap;
-    transition: all 0.5s ease-out;
 }
+
 
 .layer .slide {
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
+    transition: all 800ms;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
 }
 
-.layer > :not(.slided) {
-    flex: 0 0 0%;
+.left {
+    transform: translateX(-100%);
 }
 
-.slide:not(.slided) div {
-    display: none;
-}
-
-.layer > .slided {
-    flex:  0 0 100%;
-    display: flex;
-}
-
-
-.slided {
-    position: relative;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.right {
+    transform: translateX(100%);
 }
 
 .slided > div:not(.blur){
@@ -402,18 +487,15 @@ header {
     width: 100%;
 }
 
-
-
-
 .layer .img_ {
-    opacity: 50%;
+    opacity: 25%;
     cursor: pointer;
     position: absolute;
-    height: 20%;
+    height: 15%;
 }
 
 .layer .img_:hover {
-    opacity: 1;
+    opacity: 70%;
 }
 
 .layer > :first-child {

@@ -24,7 +24,10 @@ arrowl.addEventListener("click", function() {
     all_slide.forEach(element => {
         if (element.classList.contains("slided") && buffer !=  null) {
             element.classList.remove("slided");
+            element.classList.add("right");
             buffer.classList.add("slided");
+            buffer.classList.remove("left");
+            buffer.classList.remove("right");
             buffer = null;
         }
         buffer = element;
@@ -45,10 +48,13 @@ arrowr.addEventListener("click", function() {
     all_slide.forEach(element => {
         if (buffer == 1) {
             element.classList.add("slided")
+            element.classList.remove("left");
+            element.classList.remove("right");
             buffer = null;
         }
         if (element.classList.contains("slided") && buffer === undefined) {
             element.classList.remove("slided");
+            element.classList.add("left");
             buffer = 1;
         }
     });
